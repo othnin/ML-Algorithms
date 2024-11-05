@@ -29,8 +29,22 @@ The next step is **fine-tuning**, which involves adjusting model parameters (wei
 
 Fine-tuning optimizes the model’s internal representations for specific tasks, enabling excellent performance with relatively modest data and computational needs. However, it requires more technical skill and computational resources than prompt engineering. 
 
-#### Example Code: [Here](Example Code fine_tuning_peft.py)
+#### Example Code: [Here](fine_tuning_peft2.ipynb)
 In this example, we’ll use the Hugging Face ecosystem to fine-tune a language model for classifying text as either "positive" or "negative." We’ll work with distilbert-base-uncased, a model with around 70 million parameters based on BERT. Since this model was originally trained for language modeling, not classification, we apply transfer learning by replacing its original output layer with a classification head. We’ll also use LoRA (Low-Rank Adaptation) to optimize the fine-tuning process.
+
+#### Example Code: [Here](fine_tuning_qlora.ipynb)
+This repository contains a Python script that demonstrates how to fine-tune a large language model (LLM) using the Personalized Efficient Fine-Tuning (PEFT) approach. The script focuses on fine-tuning the Mistral-7B-Instruct-v0.2-GPTQ model, a 7B parameter instructional language model, for a text generation task.
+The main functionality of the script includes:
+
+Loading the pre-trained Mistral-7B-Instruct-v0.2-GPTQ model and tokenizer.
+Preparing the model for k-bit training using the PEFT library.
+Defining a LoRA (Low-Rank Adaptation) configuration to fine-tune the model.
+Loading and tokenizing a dataset of YouTube comments.
+Setting up the training pipeline using the Transformers library.
+Training the fine-tuned model.
+Generating a response based on a given input comment.
+
+The script demonstrates how to leverage the PEFT library to efficiently fine-tune a large language model on a specific dataset, in this case, a collection of YouTube comments. The fine-tuned model can then be used for text generation tasks, such as providing responses to user queries.
 
 ## Level 3: Building Your Own LLM
 
