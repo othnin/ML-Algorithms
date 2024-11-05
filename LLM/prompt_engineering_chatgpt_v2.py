@@ -25,12 +25,12 @@ def create_grading_chain(api_key: str, temperature: float = 0):
     
     prompt_template_text = """You are a high school history teacher grading homework assignments.
     
-Question: {question}
-Correct Answer: {correct_answer}
-Student's Answer: {student_answer}
+        Question: {question}
+        Correct Answer: {correct_answer}
+        Student's Answer: {student_answer}
 
-Evaluate if the student's answer is correct. Be explicit in your response by using the words "correct" or "wrong".
-Consider minor spelling variations as acceptable. Provide your evaluation in a single sentence."""
+        Evaluate if the student's answer is correct. Be explicit in your response by using the words "correct" or "wrong".
+        Consider minor spelling variations as acceptable. Provide your evaluation in a single sentence."""
 
     prompt = PromptTemplate(
         input_variables=["question", "correct_answer", "student_answer"],
